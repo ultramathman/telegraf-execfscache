@@ -1,0 +1,12 @@
+#!/bin/bash
+# Outputs fscache (cachefilesd) metrics to telegraf
+# https://www.kernel.org/doc/Documentation/filesystems/caching/fscache.txt
+
+stats=$(cat /proc/fs/fscache/stats|grep -v "FS-Cache statistics")
+IFS=$'\n'
+for line in $(echo "$stats")
+do
+    class=$(echo "$line"|awk -F: '{print $1}'|awk '{print $1}'|tr '[:upper:]' '[:lower:]')
+    echo -n "execfscache,class=$class "
+    echo "$line"|awk -F: '{print $2}'|cut -c 2-|tr ' ' ','
+done
