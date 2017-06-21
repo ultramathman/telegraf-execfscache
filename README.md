@@ -19,9 +19,12 @@ Sample telegraf configuration file, place in /etc/telegraf/telegraf.d/fscache.co
 ```
 ## Measurements & Fields:
 The following fields are collected as floats under the execfscache measurement. Descriptions per [kernel documentation](https://www.kernel.org/doc/Documentation/filesystems/caching/fscache.txt):
+
 Items with descriptions in the following are stored as fields, headings as tags:
-Cookies:
-idx -  Number of index cookies allocated
+
+  * Cookies:
+    * idx -  Number of index cookies allocated
+
 dat -  Number of data storage cookies allocated
 spc -  Number of special cookies allocated
 Objects:
