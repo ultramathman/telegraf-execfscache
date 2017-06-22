@@ -9,7 +9,7 @@ Sample telegraf configuration file, place in /etc/telegraf/telegraf.d/fscache.co
   # compatible with old version
   # we can still use the old command configuration
   # command = "/usr/bin/line_protocol_collector"
-  commands = ["/usr/local/bin/telegraf-fscache"]
+  commands = ["/usr/local/bin/telegraf-execfscache"]
   ## Timeout for each command to complete.
   timeout = "5s"
   # Data format to consume.
